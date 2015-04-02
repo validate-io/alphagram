@@ -2,7 +2,7 @@ alphagram
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Validates if a value is an alphagram.
+> Validates if a value is an [alphagram](http://en.wikipedia.org/wiki/Alphagram).
 
 
 ## Installation
@@ -17,18 +17,42 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-alphagram' );
+var isAlphagram = require( 'validate.io-alphagram' );
 ```
 
-#### foo( value )
+#### isAlphagram( value )
 
-What does this function do?
+Validates if a `value` is an [alphagram](http://en.wikipedia.org/wiki/Alphagram) (i.e., a sequence of characters arranged in alphabetical order).
+
+``` javascript
+var value = 'beep';
+
+var bool = isAlphagram( value );
+// returns true
+```
+
+__Note__: the `function` first checks that an input `value` is a `string` before validating that the `value` is an [alphagram](http://en.wikipedia.org/wiki/Alphagram). For non-string values, the `function` returns `false`.
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-alphagram' );
+var isAlphagram = require( 'validate.io-alphagram' );
+
+console.log( isAlphagram( 'beep' ) );
+// returns true
+
+console.log( isAlphagram( new String( 'beep' ) ) );
+// returns true
+
+console.log( isAlphagram( '' ) );
+// returns false
+
+console.log( isAlphagram( 'zba' ) );
+// returns false
+
+console.log( isAlphagram( 123 ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,

@@ -26,12 +26,24 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "valid",
+    "string",
+    "alphabetical",
+    "order",
+    "alphagram",
+    "anagram",
+    "is",
+    "isstring",
+    "isalphagram",
+    "check"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/alphagram/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-string": "^1.0.2"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",

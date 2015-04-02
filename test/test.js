@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	lib = require( './../lib' );
+	isAlphagram = require( './../lib' );
 
 
 // VARIABLES //
@@ -21,9 +21,33 @@ var expect = chai.expect,
 describe( 'validate.io-alphagram', function tests() {
 
 	it( 'should export a function', function test() {
-		expect( lib ).to.be.a( 'function' );
+		expect( isAlphagram ).to.be.a( 'function' );
 	});
 
-	it( 'should do something' );
+	it( 'should positively validate', function test() {
+		assert.ok( isAlphagram( 'abcdef' ) );
+		assert.ok( isAlphagram( new String( 'beep' ) ) );
+	});
+
+	it( 'should negatively validate', function test() {
+		var values = [
+			'zba',
+			'akjdfa',
+			' abc   ',
+			'',
+			5,
+			null,
+			NaN,
+			undefined,
+			true,
+			[],
+			{},
+			function(){}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.notOk( isAlphagram( values[ i ] ) );
+		}
+	});
 
 });
