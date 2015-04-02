@@ -33,9 +33,11 @@
     "order",
     "alphagram",
     "anagram",
+    "sorted",
     "is",
     "isstring",
     "isalphagram",
+    "issorted",
     "check"
   ],
   "bugs": {
